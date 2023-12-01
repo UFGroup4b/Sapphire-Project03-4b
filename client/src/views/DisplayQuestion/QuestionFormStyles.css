@@ -1,0 +1,66 @@
+/* QuestionFormStyles.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin: 0 0 10px 0;
+  color: #202020;
+}
+
+p {
+  margin: 0;
+  color: #202020;
+}
+
+button {
+  background-color: #2091ad;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-right: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.correct-choice {
+  background-color: #4caf50;
+}
+
+.incorrect-choice {
+  background-color: #f44336;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="datetime-local"],
+select {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-section {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Assessments",
+  "info": {
+    "name": "Assessment",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "attempts": {
+      "type": "integer",
+      "min": 1,
+      "default": 1,
+      "required": true
+    },
+    "points": {
+      "type": "float",
+      "min": 0,
+      "default": 0,
+      "required": true
+    },
+    "questions": {
+      "type": "json",
+      "required": true
+    },
+    "showGrades": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "publishDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "openDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "dueDate": {
+      "type": "datetime"
+    },
+    "timeLimit": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "default": 9999999,
+      "max": 9999999
+    },
+    "classrooms": {
+      "collection": "classroom",
+      "via": "assessments",
+      "dominant": true
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "default": "New Assessment",
+      "minLength": 1
+    }
+  }
+}

@@ -5,7 +5,7 @@ Dump files are used by docker to recreate the database from scratch. They, and t
 Creating dump files is down using postgres. When running in the Docker environment, you can open the database in a terminal like so:
 ![image](https://github.com/DavidMagda/CaSMM_fork_2023/assets/31215899/30472760-1f70-4007-9017-02ce31b9d8ce)
 
-Once in the terminal, you can use the ```pg_dump``` command to create the dump file. The full syntax for this is: ```pg_dump -U postgres -f development_db.dump```. This creates the dump file in the current directory. You can then find it in one of two ways: through the Docker UI or through your file navigation system.
+Once in the terminal, you can use the ```pg_dump``` command to create the dump file. The full syntax for this is: ```pg_dump -U postgres strapi -f development_db.dump```. This creates the dump file in the current directory. You can then find it in one of two ways: through the Docker UI or through your file navigation system.
 
 ### Finding the file through the Docker UI
 You can find the file in the 'Files' tab for the database. It's located here:

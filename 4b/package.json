@@ -1,0 +1,17 @@
+{
+  "name": "compile",
+  "version": "0.0.1",
+  "description": "Arduino compilier service",
+  "author": "Nicholas Ionata",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bull": "^4.9.0",
+    "express": "^4.16.2",
+    "properties": "^1.2.1",
+    "react-router-dom": "^6.18.0",
+    "redis-url-parse": "^2.0.0",
+    "throng": "^5.0.0",
+    "tmp": "0.2.1"
+  }
+}

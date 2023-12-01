@@ -1,11 +1,11 @@
-import { server } from './hosts';
-import axios from 'axios';
-import { getToken } from './AuthRequests';
+import { server } from "./hosts";
+import axios from "axios";
+import { getToken } from "./AuthRequests";
 
-const GET = 'GET';
-const PUT = 'PUT';
-const POST = 'POST';
-const DELETE = 'DELETE';
+const GET = "GET";
+const PUT = "PUT";
+const POST = "POST";
+const DELETE = "DELETE";
 
 // all request functions should utilize makeRequest and return an obj with structure {data, err}
 const makeRequest = async ({ method, path, data, auth = false, error }) => {
@@ -34,11 +34,11 @@ const makeRequest = async ({ method, path, data, auth = false, error }) => {
         res = (await axios.delete(path, config)).data;
         break;
       default:
-        throw Error('Invalid method.');
+        throw Error("Invalid method.");
     }
   } catch (e) {
     console.error(e);
-    err = error ? error : 'An error occurred.';
+    err = error ? error : "An error occurred.";
   }
 
   return { data: res, err: err };
@@ -49,7 +49,7 @@ export const getActivities = async () =>
     method: GET,
     path: `${server}/activities`,
     auth: true,
-    error: 'Activities could not be retrieved.',
+    error: "Activities could not be retrieved.",
   });
 
 export const getTeachers = async () =>
@@ -57,7 +57,7 @@ export const getTeachers = async () =>
     method: GET,
     path: `${server}/mentors`,
     auth: true,
-    error: 'Teachers could not be retrieved.',
+    error: "Teachers could not be retrieved.",
   });
 
 export const getAllClassrooms = async () =>
@@ -65,7 +65,7 @@ export const getAllClassrooms = async () =>
     method: GET,
     path: `${server}/classrooms`,
     auth: true,
-    error: 'Classrooms could not be retrieved.',
+    error: "Classrooms could not be retrieved.",
   });
 
 export const getAllStudents = async () =>
@@ -73,14 +73,14 @@ export const getAllStudents = async () =>
     method: GET,
     path: `${server}/students`,
     auth: true,
-    error: 'Students could not be retrieved.',
+    error: "Students could not be retrieved.",
   });
 
 export const getActivityToolboxAll = async () =>
   makeRequest({
     method: GET,
     path: `${server}/sandbox/toolbox`,
-    error: 'Toolbox could not be retrieved.',
+    error: "Toolbox could not be retrieved.",
   });
 
 // export cost getActivityLevels = async () =>
@@ -101,7 +101,7 @@ export const getActivityToolbox = async (id) =>
     method: GET,
     path: `${server}/activities/toolbox/${id}`,
     auth: true,
-    error: 'Toolbox could not be retrieved.',
+    error: "Toolbox could not be retrieved.",
   });
 
 export const getMentor = async () =>
@@ -109,7 +109,7 @@ export const getMentor = async () =>
     method: GET,
     path: `${server}/classroom-managers/me`,
     auth: true,
-    error: 'Your classroom manager information could not be retrieved.',
+    error: "Your classroom manager information could not be retrieved.",
   });
 
 export const getClassroom = async (id) =>
@@ -117,7 +117,7 @@ export const getClassroom = async (id) =>
     method: GET,
     path: `${server}/classrooms/${id}`,
     auth: true,
-    error: 'Classroom information could not be retrieved',
+    error: "Classroom information could not be retrieved",
   });
 
 export const getStudentClassroom = async () =>
@@ -125,7 +125,7 @@ export const getStudentClassroom = async () =>
     method: GET,
     path: `${server}/classrooms/student`,
     auth: true,
-    error: 'Classroom information could not be retrieved',
+    error: "Classroom information could not be retrieved",
   });
 
 export const getClassrooms = async (ids) =>
@@ -135,7 +135,7 @@ export const getStudents = async (code) =>
   makeRequest({
     method: GET,
     path: `${server}/classrooms/join/${code}`,
-    error: 'Student info could not be retrieved.',
+    error: "Student info could not be retrieved.",
   });
 
 export const getStudent = async (id) =>
@@ -143,7 +143,7 @@ export const getStudent = async (id) =>
     method: GET,
     path: `${server}/students/${id}`,
     auth: true,
-    error: 'Student info could not be retrieved.',
+    error: "Student info could not be retrieved.",
   });
 
 export const postJoin = async (code, ids) =>
@@ -153,7 +153,7 @@ export const postJoin = async (code, ids) =>
     data: {
       students: ids,
     },
-    error: 'Login failed.',
+    error: "Login failed.",
   });
 
 export const createActivity = async (activity, learningStandard) =>
@@ -166,7 +166,7 @@ export const createActivity = async (activity, learningStandard) =>
       template: '<xml xmlns="http://www.w3.org/1999/xhtml"></xml>)',
     },
     auth: true,
-    error: 'Login failed.',
+    error: "Login failed.",
   });
 
 export const setEnrollmentStatus = async (id, enrolled) =>
@@ -177,7 +177,7 @@ export const setEnrollmentStatus = async (id, enrolled) =>
       enrolled: enrolled,
     },
     auth: true,
-    error: 'Failed to change enrollment status.',
+    error: "Failed to change enrollment status.",
   });
 
 export const updateStudent = async (id, student) =>
@@ -186,7 +186,7 @@ export const updateStudent = async (id, student) =>
     path: `${server}/students/${id}`,
     data: student,
     auth: true,
-    error: 'Failed to update student.',
+    error: "Failed to update student.",
   });
 
 export const getUnits = async (id) =>
@@ -194,7 +194,7 @@ export const getUnits = async (id) =>
     method: GET,
     path: `${server}/units?grade=${id}`,
     auth: true,
-    error: 'Failed to retrieve units.',
+    error: "Failed to retrieve units.",
   });
 
 export const getLessonModule = async (id) =>
@@ -202,7 +202,7 @@ export const getLessonModule = async (id) =>
     method: GET,
     path: `${server}/lesson-modules/${id}`,
     auth: true,
-    error: 'Failed to retrieve learning standard.',
+    error: "Failed to retrieve learning standard.",
   });
 
 export const getUnit = async (id) =>
@@ -210,7 +210,7 @@ export const getUnit = async (id) =>
     method: GET,
     path: `${server}/units/${id}`,
     auth: true,
-    error: 'Failed to retrieve learning standard.',
+    error: "Failed to retrieve learning standard.",
   });
 
 export const getAllUnits = async () =>
@@ -218,7 +218,7 @@ export const getAllUnits = async () =>
     method: GET,
     path: `${server}/units`,
     auth: true,
-    error: 'Failed to retrieve learning standard.',
+    error: "Failed to retrieve learning standard.",
   });
 
 export const getLessonModulecount = async () =>
@@ -226,7 +226,7 @@ export const getLessonModulecount = async () =>
     method: GET,
     path: `${server}/lesson-modules/count`,
     auth: true,
-    error: 'Failed to retrieve learning standard.',
+    error: "Failed to retrieve learning standard.",
   });
 
 export const getLessonModuleAll = async () =>
@@ -234,7 +234,7 @@ export const getLessonModuleAll = async () =>
     method: GET,
     path: `${server}/lesson-modules?_sort=unit.name:ASC,name:ASC`,
     auth: true,
-    error: 'Failed to retrieve learning standard.',
+    error: "Failed to retrieve learning standard.",
   });
 
 export const setSelection = async (classroom, learningStandard) =>
@@ -246,7 +246,7 @@ export const setSelection = async (classroom, learningStandard) =>
       lesson_module: learningStandard,
     },
     auth: true,
-    error: 'Failed to set active learning standard.',
+    error: "Failed to set active learning standard.",
   });
 
 export const saveWorkspace = async (activity, workspace, replay) =>
@@ -259,7 +259,7 @@ export const saveWorkspace = async (activity, workspace, replay) =>
       replay,
     },
     auth: true,
-    error: 'Failed to save your workspace.',
+    error: "Failed to save your workspace.",
   });
 
 export const getSaves = async (activity) =>
@@ -267,7 +267,7 @@ export const getSaves = async (activity) =>
     method: GET,
     path: `${server}/saves/activity/${activity}`,
     auth: true,
-    error: 'Past saves could not be retrieved.',
+    error: "Past saves could not be retrieved.",
   });
 
 export const getSave = async (id) =>
@@ -275,7 +275,7 @@ export const getSave = async (id) =>
     method: GET,
     path: `${server}/saves/${id}`,
     auth: true,
-    error: 'Save could not be retrieved.',
+    error: "Save could not be retrieved.",
   });
 
 export const createSubmission = async (id, workspace, sketch, path, isAuth) =>
@@ -285,11 +285,11 @@ export const createSubmission = async (id, workspace, sketch, path, isAuth) =>
     data: {
       activity: id,
       workspace: workspace,
-      board: 'arduino:avr:uno',
+      board: "arduino:avr:uno",
       sketch: sketch,
     },
     auth: isAuth,
-    error: 'Failed to create submission.',
+    error: "Failed to create submission.",
   });
 
 export const getSubmission = async (submissionId, path, isAuth) =>
@@ -297,7 +297,7 @@ export const getSubmission = async (submissionId, path, isAuth) =>
     method: GET,
     path: `${server}${path}/${submissionId}`,
     auth: isAuth,
-    error: 'Failed to retrieve submission status',
+    error: "Failed to retrieve submission status",
   });
 
 export const addStudent = async (name, character, classroom) =>
@@ -310,7 +310,7 @@ export const addStudent = async (name, character, classroom) =>
       classroom: classroom,
     },
     auth: true,
-    error: 'Failed to add student.',
+    error: "Failed to add student.",
   });
 
 export const addStudents = async (students, classroom) =>
@@ -319,7 +319,7 @@ export const addStudents = async (students, classroom) =>
     path: `${server}/students`,
     data: { students: students, classroom: classroom },
     auth: true,
-    error: 'Failed to add students.',
+    error: "Failed to add students.",
   });
 
 export const deleteStudent = async (student) =>
@@ -327,7 +327,7 @@ export const deleteStudent = async (student) =>
     method: DELETE,
     path: `${server}/students/${student}`,
     auth: true,
-    error: 'Failed to delete student.',
+    error: "Failed to delete student.",
   });
 
 export const updateActivityLevelTemplate = async (id, workspace, blocksList) =>
@@ -339,7 +339,7 @@ export const updateActivityLevelTemplate = async (id, workspace, blocksList) =>
       blocks: blocksList,
     },
     auth: true,
-    error: 'Failed to update the template for the activity',
+    error: "Failed to update the template for the activity",
   });
 
 export const updateActivityTemplate = async (id, workspace) =>
@@ -351,7 +351,7 @@ export const updateActivityTemplate = async (id, workspace) =>
       //blocks: blocksList,
     },
     auth: true,
-    error: 'Failed to update the activity template for the activity',
+    error: "Failed to update the activity template for the activity",
   });
 
 export const deleteActivity = async (id) =>
@@ -359,7 +359,7 @@ export const deleteActivity = async (id) =>
     method: DELETE,
     path: `${server}/activities/${id}`,
     auth: true,
-    error: 'Failed to delete activity.',
+    error: "Failed to delete activity.",
   });
 
 export const deleteLessonModule = async (id) =>
@@ -367,7 +367,7 @@ export const deleteLessonModule = async (id) =>
     method: DELETE,
     path: `${server}/lesson-modules/${id}`,
     auth: true,
-    error: 'Failed to delete student.',
+    error: "Failed to delete student.",
   });
 
 export const createLessonModule = async (
@@ -390,10 +390,16 @@ export const createLessonModule = async (
       link,
     },
     auth: true,
-    error: 'Login failed.',
+    error: "Login failed.",
   });
 
-export const createUnit = async (number, name, standardsID, standardsDescrip, grade) =>
+export const createUnit = async (
+  number,
+  name,
+  standardsID,
+  standardsDescrip,
+  grade
+) =>
   makeRequest({
     method: POST,
     path: `${server}/units`,
@@ -405,7 +411,7 @@ export const createUnit = async (number, name, standardsID, standardsDescrip, gr
       standards_description: standardsDescrip,
     },
     auth: true,
-    error: 'Fail to create new unit.',
+    error: "Fail to create new unit.",
   });
 
 export const updateUnit = async (
@@ -427,7 +433,7 @@ export const updateUnit = async (
       standards_description: standardsDescrip,
     },
     auth: true,
-    error: 'Failed to update unit',
+    error: "Failed to update unit",
   });
 
 export const getGrades = async () =>
@@ -435,7 +441,7 @@ export const getGrades = async () =>
     method: GET,
     path: `${server}/grades`,
     auth: true,
-    error: 'Grades could not be retrieved',
+    error: "Grades could not be retrieved",
   });
 
 export const getGrade = async (grade) =>
@@ -443,7 +449,7 @@ export const getGrade = async (grade) =>
     method: GET,
     path: `${server}/grades/${grade}`,
     auth: true,
-    error: 'Grade could not be retrieved',
+    error: "Grade could not be retrieved",
   });
 
 export const updateLessonModule = async (
@@ -463,7 +469,7 @@ export const updateLessonModule = async (
       link,
     },
     auth: true,
-    error: 'Failed to update unit',
+    error: "Failed to update unit",
   });
 
 export const updateActivityDetails = async (
@@ -493,7 +499,7 @@ export const updateActivityDetails = async (
       computationComponents,
     },
     auth: true,
-    error: 'Failed to update unit',
+    error: "Failed to update unit",
   });
 
 export const getLessonModuleActivities = async (lsId) =>
@@ -501,15 +507,15 @@ export const getLessonModuleActivities = async (lsId) =>
     method: GET,
     path: `${server}/activities?lesson_module.id=${lsId}`,
     auth: true,
-    error: 'Activity cannot be retrived',
+    error: "Activity cannot be retrived",
   });
 
-  export const getActivityLevels = async (lsId) =>
+export const getActivityLevels = async (lsId) =>
   makeRequest({
     method: GET,
     path: `${server}/authorized-workspaces?activities.id=${lsId}`,
     auth: true,
-    error: 'Activities cannot be retrieved',
+    error: "Activities cannot be retrieved",
   });
 
 export const getActivity = async (id) =>
@@ -517,7 +523,7 @@ export const getActivity = async (id) =>
     method: GET,
     path: `${server}/activities/${id}`,
     auth: true,
-    error: 'Activity cannot be retrived',
+    error: "Activity cannot be retrived",
   });
 
 export const forgetPassword = async (email) =>
@@ -527,7 +533,7 @@ export const forgetPassword = async (email) =>
     data: {
       email,
     },
-    error: 'cannot retrive data from the provided email',
+    error: "cannot retrive data from the provided email",
   });
 
 export const resetPassword = async (code, password, passwordConfirmation) =>
@@ -540,7 +546,7 @@ export const resetPassword = async (code, password, passwordConfirmation) =>
       passwordConfirmation,
     },
     error:
-      'Cannot update new password. Please try again or get a new link from the forgot password page.',
+      "Cannot update new password. Please try again or get a new link from the forgot password page.",
   });
 
 export const getSessions = async () =>
@@ -548,7 +554,7 @@ export const getSessions = async () =>
     method: GET,
     path: `${server}/sessions`,
     auth: true,
-    error: 'Sessions could not be retrieved.',
+    error: "Sessions could not be retrieved.",
   });
 
 export const getSessionsWithFilter = async (filterOptions) =>
@@ -556,7 +562,7 @@ export const getSessionsWithFilter = async (filterOptions) =>
     method: GET,
     path: `${server}/sessions?${filterOptions}`,
     auth: true,
-    error: 'Sessions could not be retrieved.',
+    error: "Sessions could not be retrieved.",
   });
 
 export const getSessionCount = async () =>
@@ -564,7 +570,7 @@ export const getSessionCount = async () =>
     method: GET,
     path: `${server}/sessions/count`,
     auth: true,
-    error: 'Session count could not be retrieved.',
+    error: "Session count could not be retrieved.",
   });
 
 export const getSessionCountWithFilter = async (filterOptions) =>
@@ -572,7 +578,7 @@ export const getSessionCountWithFilter = async (filterOptions) =>
     method: GET,
     path: `${server}/sessions/count?${filterOptions}`,
     auth: true,
-    error: 'Session count could not be retrieved.',
+    error: "Session count could not be retrieved.",
   });
 
 export const getSession = async (id) =>
@@ -580,7 +586,7 @@ export const getSession = async (id) =>
     method: GET,
     path: `${server}/sessions/${id}`,
     auth: true,
-    error: 'Sessions could not be retrieved.',
+    error: "Sessions could not be retrieved.",
   });
 export const submitBugReport = async (
   description,
@@ -599,7 +605,7 @@ export const submitBugReport = async (
       email,
       systemInfo,
     },
-    error: 'Unable to submit bug-report',
+    error: "Unable to submit bug-report",
   });
 
 export const getAuthorizedWorkspaces = async () =>
@@ -607,7 +613,7 @@ export const getAuthorizedWorkspaces = async () =>
     method: GET,
     path: `${server}/authorized-workspaces`,
     auth: true,
-    error: 'Unable to retrive cc worksapces',
+    error: "Unable to retrive cc worksapces",
   });
 
 export const getAuthorizedWorkspace = async (id) =>
@@ -615,7 +621,7 @@ export const getAuthorizedWorkspace = async (id) =>
     method: GET,
     path: `${server}/authorized-workspaces/${id}`,
     auth: true,
-    error: 'Unable to retrive cc workspace',
+    error: "Unable to retrive cc workspace",
   });
 
 export const createAuthorizedWorkspace = async (
@@ -636,14 +642,14 @@ export const createAuthorizedWorkspace = async (
       blocks,
       classroomId,
     },
-    error: 'Unable to create cc workspace',
+    error: "Unable to create cc workspace",
   });
 export const getAuthorizedWorkspaceToolbox = async (id) =>
   makeRequest({
     method: GET,
     path: `${server}/authorized-workspaces/toolbox/${id}`,
     auth: true,
-    error: 'Toolbox could not be retrieved.',
+    error: "Toolbox could not be retrieved.",
   });
 
 export const updateAuthorizedWorkspace = async (id, template, blocks) =>
@@ -655,14 +661,14 @@ export const updateAuthorizedWorkspace = async (id, template, blocks) =>
       template,
       blocks,
     },
-    error: 'Unable to create cc workspace',
+    error: "Unable to create cc workspace",
   });
 export const deleteAuthorizedWorkspace = async (id) =>
   makeRequest({
     method: DELETE,
     path: `${server}/authorized-workspaces/${id}`,
     auth: true,
-    error: 'Unable to delete cc workspace',
+    error: "Unable to delete cc workspace",
   });
 
 export const getClassroomWorkspace = async (id) =>
@@ -670,5 +676,60 @@ export const getClassroomWorkspace = async (id) =>
     method: GET,
     path: `${server}/classroom/workspaces/${id}`,
     auth: true,
-    error: 'Unable to retrive classroom workspaces',
+    error: "Unable to retrive classroom workspaces",
+  });
+export const getAssessments = async () =>
+  makeRequest({
+    method: GET,
+    path: `${server}/assessments`,
+    auth: true,
+    error: "Assessments could not be retrieved.",
+  });
+
+export const getAssessment = async (id) =>
+  makeRequest({
+    method: GET,
+    path: `${server}/assessments/${id}`,
+    auth: true,
+    error: "Assessment information could not be retrieved",
+  });
+
+export const createAssessment = async () => {
+  const curDate = new Date();
+  curDate.setFullYear(curDate.getFullYear() + 1000);
+  return makeRequest({
+    method: POST,
+    path: `${server}/assessments`,
+    data: {
+      name: "New Assessment",
+      attempts: 1,
+      points: 0,
+      questions: "[]",
+      showGrades: false,
+      publishDate: curDate.toJSON(),
+      openDate: curDate.toJSON(),
+      dueDate: curDate.toJSON(),
+      timeLimit: 9999999,
+    },
+    auth: true,
+    error: "Assessment creation failed.",
+  });
+};
+export const updateAssessment = async (id, assessment) =>
+  makeRequest({
+    method: PUT,
+    path: `${server}/assessments/${id}`,
+    data: {
+      ...assessment,
+      questions: JSON.stringify(assessment.questions),
+    },
+    auth: true,
+    error: "Failed to update assessment data.",
+  });
+export const deleteAssessment = async (id) =>
+  makeRequest({
+    method: DELETE,
+    path: `${server}/assessments/${id}`,
+    auth: true,
+    error: "Failed to delete assessment.",
   });

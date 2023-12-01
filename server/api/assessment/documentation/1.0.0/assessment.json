@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/sessions": {
+    "/assessments": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Session"
+                    "$ref": "#/components/schemas/Assessment"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Session"
+          "Assessment"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Session"
+                  "$ref": "#/components/schemas/Assessment"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Session"
+          "Assessment"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewSession"
+                "$ref": "#/components/schemas/NewAssessment"
               }
             }
           }
         }
       }
     },
-    "/sessions/count": {
+    "/assessments/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Session"
+          "Assessment"
         ],
         "parameters": []
       }
     },
-    "/sessions/{id}": {
+    "/assessments/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Session"
+                  "$ref": "#/components/schemas/Assessment"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Session"
+          "Assessment"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Session"
+                  "$ref": "#/components/schemas/Assessment"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Session"
+          "Assessment"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewSession"
+                "$ref": "#/components/schemas/NewAssessment"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Session"
+          "Assessment"
         ],
         "parameters": [
           {
@@ -514,85 +514,59 @@
   },
   "components": {
     "schemas": {
-      "Session": {
+      "Assessment": {
         "required": [
-          "id"
+          "id",
+          "attempts",
+          "points",
+          "questions",
+          "showGrades",
+          "publishDate",
+          "openDate",
+          "timeLimit",
+          "name"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "classroom": {
-            "required": [
-              "id",
-              "code"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "school": {
-                "type": "string"
-              },
-              "sessions": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "mentors": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "students": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "code": {
-                "type": "string"
-              },
-              "grade": {
-                "type": "string"
-              },
-              "selections": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "authorized_workspaces": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "assessments": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "attempts": {
+            "type": "integer",
+            "default": 1
           },
-          "students": {
+          "points": {
+            "type": "number",
+            "default": 0
+          },
+          "questions": {
+            "type": "object"
+          },
+          "showGrades": {
+            "type": "boolean",
+            "default": true
+          },
+          "publishDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "openDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dueDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "timeLimit": {
+            "type": "integer",
+            "default": 9999999
+          },
+          "classrooms": {
             "type": "array",
             "items": {
               "required": [
                 "id",
-                "enrolled"
+                "code"
               ],
               "properties": {
                 "id": {
@@ -601,10 +575,7 @@
                 "name": {
                   "type": "string"
                 },
-                "character": {
-                  "type": "string"
-                },
-                "classroom": {
+                "school": {
                   "type": "string"
                 },
                 "sessions": {
@@ -613,71 +584,41 @@
                     "type": "string"
                   }
                 },
-                "enrolled": {
-                  "type": "boolean"
+                "mentors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
-                "last_logged_in": {
+                "students": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "code": {
                   "type": "string"
                 },
-                "created_by": {
+                "grade": {
                   "type": "string"
                 },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "submissions": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "status",
-                "workspace",
-                "board",
-                "sketch",
-                "sandbox"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
+                "selections": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
-                "status": {
-                  "type": "string"
+                "authorized_workspaces": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
-                "workspace": {
-                  "type": "string"
-                },
-                "success": {
-                  "type": "boolean"
-                },
-                "hex": {
-                  "type": "string"
-                },
-                "stdout": {
-                  "type": "string"
-                },
-                "stderr": {
-                  "type": "string"
-                },
-                "board": {
-                  "type": "string"
-                },
-                "sketch": {
-                  "type": "string"
-                },
-                "sandbox": {
-                  "type": "boolean"
-                },
-                "session": {
-                  "type": "string"
-                },
-                "activity": {
-                  "type": "string"
-                },
-                "job_id": {
-                  "type": "integer"
+                "assessments": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "created_by": {
                   "type": "string"
@@ -688,187 +629,74 @@
               }
             }
           },
-          "saves": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "workspace"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "activity": {
-                  "type": "string"
-                },
-                "student": {
-                  "type": "string"
-                },
-                "workspace": {
-                  "type": "string"
-                },
-                "replay": {
-                  "type": "object"
-                },
-                "session": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "name": {
+            "type": "string",
+            "default": "New Assessment",
+            "minLength": 1
           },
-          "unit": {
-            "required": [
-              "id",
-              "name",
-              "number"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "grade": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "standards_id": {
-                "type": "string"
-              },
-              "standards_description": {
-                "type": "string"
-              },
-              "number": {
-                "type": "integer"
-              },
-              "lesson_modules": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "grade": {
-            "required": [
-              "id",
-              "name"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "classrooms": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "units": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "lesson_module": {
-            "required": [
-              "id",
-              "number",
-              "name"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "number": {
-                "type": "number"
-              },
-              "name": {
-                "type": "string"
-              },
-              "expectations": {
-                "type": "string"
-              },
-              "activities": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "unit": {
-                "type": "string"
-              },
-              "standards": {
-                "type": "string"
-              },
-              "link": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
-      "NewSession": {
+      "NewAssessment": {
+        "required": [
+          "attempts",
+          "points",
+          "questions",
+          "showGrades",
+          "publishDate",
+          "openDate",
+          "timeLimit",
+          "name"
+        ],
         "properties": {
-          "classroom": {
-            "type": "string"
+          "attempts": {
+            "type": "integer",
+            "default": 1
           },
-          "students": {
+          "points": {
+            "type": "number",
+            "default": 0
+          },
+          "questions": {
+            "type": "object"
+          },
+          "showGrades": {
+            "type": "boolean",
+            "default": true
+          },
+          "publishDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "openDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dueDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "timeLimit": {
+            "type": "integer",
+            "default": 9999999
+          },
+          "classrooms": {
             "type": "array",
             "items": {
               "type": "string"
             }
           },
-          "submissions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "name": {
+            "type": "string",
+            "default": "New Assessment",
+            "minLength": 1
           },
-          "saves": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "unit": {
-            "type": "string"
-          },
-          "grade": {
-            "type": "string"
-          },
-          "lesson_module": {
-            "type": "string"
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "created_by": {
             "type": "string"
@@ -882,7 +710,7 @@
   },
   "tags": [
     {
-      "name": "Session"
+      "name": "Assessment"
     }
   ]
 }

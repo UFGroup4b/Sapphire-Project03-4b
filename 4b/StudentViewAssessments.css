@@ -1,0 +1,115 @@
+/* ##### Project Testing ##### */
+body {
+    font-family: sans-serif;
+    background: #3D5C82;
+    background-size: cover;
+}
+.header {
+    float: left;
+    width: calc(100%);
+    position: relative;
+    display: block;
+    padding: 6px 6px 6px 10px;
+    box-sizing: border-box;
+    border-bottom: 12px #3D5C82;
+    border-bottom-style: solid;
+    background: #5BABDE;
+}
+.tableTop {
+    float: left;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% - 2rem);
+    position: relative;
+    display: block;
+    padding: 5px 6px 5px 10px;
+    box-sizing: border-box;
+    border-radius: 5px 5px 0px 0px;
+    border: 3px solid #3D5C82;
+    background: #5BABDE;
+}
+.tableMid {
+    float: left;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% - 2rem);
+    position: relative;
+    display: block;
+    padding: 5px 6px 5px 10px;
+    box-sizing: border-box;
+    border: 3px solid #3D5C82;
+    border-top: none;
+    background: #F4F4F5;
+}
+.bold {
+    font-weight: bold;
+}
+.tableHover:hover {
+    background: #ddd;
+}
+.noTopBorder {
+    border-top: none;
+}
+.noBottomBorder {
+    border-bottom: none;
+}
+.projectText {
+    font-size: 1.5rem;
+    color: #414141;
+}
+.smallerText {
+    font-size: 1.25rem;
+    color: #414141;
+}
+.alignLeft {
+    float: left;
+}
+.alignRight {
+    float: right;
+    padding-right: 12px;
+}
+button {
+    background: #5BABDE;
+    color: #3b3b3b;
+    padding: 0.1rem 0.5rem;
+    font-size: 0.8rem;
+    border: 2px solid #3D5C82;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    outline: none;
+    position: relative;
+    transform: translate(-10%, -50%);
+}
+.button2 {
+    margin-top: 4rem;
+    margin-left: 1rem;
+    margin-right: 0rem;
+    font-size: 1.3rem;
+}
+.button3 {
+    font-size: 1rem;
+    border: 1px solid #3D5C82;
+    transform: translate(-20%, 10%);
+    margin-left: 0.5rem;
+}
+button:hover {
+    background: #ddd;
+}
+.background {
+    padding: 1px; /* hack to prevent margin collapse */
+    background-size: cover;
+    background: #3d5c82;
+}
+.blackText {
+    padding-top: 4.5rem;
+    font-size: 2rem;
+    color: #414141;
+    padding-bottom: 0;
+}
+.whiteText {
+    font-size: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: white;
+}

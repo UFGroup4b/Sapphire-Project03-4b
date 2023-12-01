@@ -1,12 +1,13 @@
-import {React, useEffect} from 'react';
-import { Tabs } from 'antd';
-import './Classroom.less';
+import { React, useEffect } from "react";
+import { Tabs } from "antd";
+import "./Classroom.less";
 
-import NavBar from '../../../components/NavBar/NavBar';
-import Roster from './Roster/Roster';
-import Home from './Home/Home';
-import SavedWorkSpaceTab from '../../../components/Tabs/SavedWorkspaceTab';
-import { useSearchParams, useParams } from 'react-router-dom';
+import NavBar from "../../../components/NavBar/NavBar";
+import Roster from "./Roster/Roster";
+import Home from "./Home/Home";
+import SavedWorkSpaceTab from "../../../components/Tabs/SavedWorkspaceTab";
+import { useSearchParams, useParams } from "react-router-dom";
+import TeacherViewAssessments from "../../../../../4b/TeacherViewAssessments";
 
 const { TabPane } = Tabs;
 
@@ -18,22 +19,21 @@ export default function Classroom({
   const [searchParams, setSearchParams] = useSearchParams();
 
   const { id } = useParams();
-  const tab = searchParams.get('tab');
-  const viewing = searchParams.get('viewing');
+  const tab = searchParams.get("tab");
+  const viewing = searchParams.get("viewing");
 
   useEffect(() => {
-    sessionStorage.setItem('classroomId', id);
-
+    sessionStorage.setItem("classroomId", id);
   }, [id]);
 
   return (
-    <div className='container nav-padding'>
+    <div className="container nav-padding">
       <NavBar isMentor={true} />
       <Tabs
-        defaultActiveKey={tab ? tab : 'home'}
+        defaultActiveKey={tab ? tab : "home"}
         onChange={(key) => setSearchParams({ tab: key })}
       >
-        <TabPane tab='Home' key='home'>
+        <TabPane tab="Home" key="home">
           <Home
             classroomId={parseInt(id)}
             selectedActivity={selectedActivity}
@@ -41,15 +41,18 @@ export default function Classroom({
             viewing={viewing}
           />
         </TabPane>
-        <TabPane tab='Roster' key='roster'>
+        <TabPane tab="Roster" key="roster">
           <Roster handleLogout={handleLogout} classroomId={id} />
         </TabPane>
-        <TabPane tab='Saved Workspaces' key='workspace'>
+        <TabPane tab="Saved Workspaces" key="workspace">
           <SavedWorkSpaceTab
             searchParams={searchParams}
             setSearchParams={setSearchParams}
             classroomId={id}
           />
+        </TabPane>
+        <TabPane tab="Assessments" key="assessments">
+          <TeacherViewAssessments assessmentList={null} />
         </TabPane>
       </Tabs>
     </div>

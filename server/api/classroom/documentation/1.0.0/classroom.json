@@ -1015,6 +1015,69 @@
                 }
               }
             }
+          },
+          "assessments": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "attempts",
+                "points",
+                "questions",
+                "showGrades",
+                "publishDate",
+                "openDate",
+                "timeLimit",
+                "name"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "attempts": {
+                  "type": "integer"
+                },
+                "points": {
+                  "type": "number"
+                },
+                "questions": {
+                  "type": "object"
+                },
+                "showGrades": {
+                  "type": "boolean"
+                },
+                "publishDate": {
+                  "type": "string"
+                },
+                "openDate": {
+                  "type": "string"
+                },
+                "dueDate": {
+                  "type": "string"
+                },
+                "timeLimit": {
+                  "type": "integer"
+                },
+                "classrooms": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "name": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -1060,6 +1123,12 @@
             }
           },
           "authorized_workspaces": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assessments": {
             "type": "array",
             "items": {
               "type": "string"

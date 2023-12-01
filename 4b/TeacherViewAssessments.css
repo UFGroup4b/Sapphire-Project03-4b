@@ -1,0 +1,115 @@
+/* ##### Project Testing ##### */
+body {
+    font-family: sans-serif;
+    background-size: cover;
+    background-color: #3D5C82;
+}
+.tableSolo {
+    float: left;
+    width: calc(100% - 2rem);
+    position: relative;
+    display: block;
+    padding: 12px 6px 12px 10px;
+    box-sizing: border-box;
+    border-radius: 15px 15px 15px 15px;
+    border: 3px solid #3D5C82;
+    background: #F4F4F5;
+}
+.tableTop {
+    float: left;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0;
+    width: calc(100% - 2rem);
+    position: relative;
+    display: block;
+    padding: 5px 6px 5px 10px;
+    box-sizing: border-box;
+    border-radius: 5px 5px 0px 0px;
+    border: 3px solid #3D5C82;
+    background: #5BABDE;
+}
+.tableMid {
+    float: left;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% - 2rem);
+    position: relative;
+    display: block;
+    padding: 5px 6px 5px 10px;
+    box-sizing: border-box;
+    border: 3px solid #3D5C82;
+    border-top: none;
+    background: #F4F4F5;
+}
+.bold {
+    font-weight: bold;
+}
+.noBold {
+    font-weight: normal;
+}
+.noTopBorder {
+    border-top: none;
+}
+.noBottomBorder {
+    border-bottom: none;
+}
+.projectText {
+    font-size: 1.5rem;
+    color: #414141;
+    text-align: left;
+}
+.alignLeft {
+    float: left;
+}
+.alignRight {
+    float: right;
+}
+button {
+    background: #5BABDE;
+    color: #3b3b3b;
+    padding: 0.1rem 0.5rem;
+    font-size: 0.8rem;
+    border: 2px solid #3D5C82;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    outline: none;
+    position: relative;
+    transform: translate(-10%, 35%);
+}
+.shortenTransform1 {
+    transform: translate(-10%, 35%);
+}
+.shortenTransform2 {
+    transform: translate(-22%, 35%);
+}
+.shortenTransform3 {
+    transform: translate(-21%, 35%);
+}
+.button2 {
+    margin-top: 4rem;
+    margin-left: 1rem;
+    margin-right: 0rem;
+    font-size: 1.3rem;
+}
+button:hover {
+    background: #ddd;
+}
+.background {
+    padding: 1px; /* hack to prevent margin collapse */
+    background-size: cover;
+    background: #3d5c82;
+}
+.whiteText {
+    font-size: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: white;
+}
+.setFullMargins {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.invisible {
+    color: #3d5c82;
+}
