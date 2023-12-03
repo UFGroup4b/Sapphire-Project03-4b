@@ -143,10 +143,20 @@ Before submitting a pull request, rebase the feature branch into the target bran
 
 
 ## Updates
-- List of all project features implemented and associated screenshots of features developed
-- Instructions for how to run the project locally 
-- How to update database and server connections
-- Update the database and STRAPI dump files in your file directory
-- Outstanding work
-- Built Upon
+- ### List of all project features implemented and associated screenshots of features developed
+- ### Instructions for how to run the project locally
+
+1. Install [Node](https://nodejs.org/en/) and [Yarn](https://classic.yarnpkg.com/en/docs/install#windows-stable)
+2. Run `yarn` to install project dependencies
+3. Run `yarn start` to startup the client (please note that much of the functionality will not work without also starting up the backend services)
+4. Run `yarn start` from `/client`
+5. Install [docker](https://docs.docker.com/get-docker/)
+6. Run `docker compose up` from `/`
+
+   > Grant permission to the **scripts** and **server** directories if you are prompted
+
+- ### How to update database and server connections
+- ### Update the database and STRAPI dump files in your file directory
+- ### Outstanding work
+- ### Built Upon
   - Credit people/organizations you borrowed code from  or APIs you used - e.g., Bootstrap,  emails, authentication etc
