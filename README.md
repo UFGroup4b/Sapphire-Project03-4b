@@ -17,7 +17,7 @@ Cloud-based programming interface
     - Description: Allows teachers and admin to edit existing assessments and specific problems in the assessment.
     - Images:
 
-![Editor image](https://github.com/UFGroup4b/Sapphire-Project03-4b/blob/develop/4b/READMEimgs/AssessmentEditor.png?raw=true | height=100)
+<img src="[https://your-image-url.type](https://github.com/UFGroup4b/Sapphire-Project03-4b/blob/develop/4b/READMEimgs/AssessmentEditor.png?raw=true)" width="50%">
 
 ![Editor image 2](https://github.com/UFGroup4b/Sapphire-Project03-4b/blob/develop/4b/READMEimgs/AssessmentEditor2.png?raw=true | height=100)
 
