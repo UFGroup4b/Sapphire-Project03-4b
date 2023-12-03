@@ -160,7 +160,7 @@ Before submitting a pull request, rebase the feature branch into the target bran
 
 ### How to update database and server connections
 
-### Update the database and STRAPI dump files in your file directory
+To update the database and server connections, you will need to connect to your docker and restart it after making the necessary changes to the database.
 
 ### Outstanding work
 
