@@ -8,8 +8,11 @@ Cloud-based programming interface
 ![Deploy Production](https://github.com/STEM-C/CaSMM/workflows/Deploy%20Production/badge.svg)
 
 <br/>
+
 ## Updates
+
 ### List of all project features implemented and associated screenshots of features developed
+
   - Assessment Editor
     - Description: Allows teachers and admin to edit existing assessments and specific problems in the assessment.
     - Images:
