@@ -160,7 +160,7 @@ Before submitting a pull request, rebase the feature branch into the target bran
 
 ### How to update database and server connections
 
-To update the database and server connections, you will need to connect to your docker and restart it after making the necessary changes to the database.
+To update the database and server connections, you will need to connect to your docker and restart it after making the necessary changes to the database. Note that all changes that were made by Group 4b were consistent with the existing database, so there is no extra work to be done.
 
 ### Outstanding work
 
