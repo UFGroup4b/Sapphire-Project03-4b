@@ -13,19 +13,73 @@ Cloud-based programming interface
 
 ### List of all project features implemented and associated screenshots of features developed
 
-  - Assessment Editor
-    - Description: Allows teachers and admin to edit existing assessments and specific problems in the assessment.
-    - Images:
+- Assessment Editor
 
-<img src="https://github.com/UFGroup4b/Sapphire-Project03-4b/blob/develop/4b/READMEimgs/AssessmentEditor.png?raw=true" width="50%">
+  - Description: Allows teachers and admin to edit existing assessments and specific problems in the assessment.
+  - Images:
+      <p align="center">
+      <img src="https://github.com/UFGroup4b/Sapphire-Project03-4b/blob/develop/4b/READMEimgs/AssessmentEditor.png?raw=true" width="50%">
+      <img src="https://github.com/UFGroup4b/Sapphire-Project03-4b/blob/develop/4b/READMEimgs/AssessmentEditor2.png?raw=true" height="300">
+      </p>
 
-![Editor image 2](https://github.com/UFGroup4b/Sapphire-Project03-4b/blob/develop/4b/READMEimgs/AssessmentEditor2.png?raw=true | height=100)
+    > Figure 1: Display of the assessment editor.
 
-![Question Editor](https://github.com/UFGroup4b/Sapphire-Project03-4b/blob/develop/4b/READMEimgs/QuestionEditor.png?raw=true | height=100)
+      <p align="center">
+      <img src="https://github.com/UFGroup4b/Sapphire-Project03-4b/blob/develop/4b/READMEimgs/QuestionEditor.png?raw=true" width="50%">
+      </p>
 
-  - Assessments List Page
-  - Take Assessment Page
-  - Assessment Grading Page
+    > Figure 2: Display of the question editor.
+
+- Assessment Preview Page
+
+  - Description: Allows teachers to preview what the assessment will look like.
+  - Images:
+
+    <p align="center">
+    <img src="https://github.com/UFGroup4b/Sapphire-Project03-4b/blob/develop/4b/READMEimgs/AssessmentPreview.png?raw=true" width="50%">
+    </p>
+
+    > Figure 3: Display of the assessment preview page.
+
+- Assessments List Page
+
+  - Description: There are two different displays: For teachers, it displays a list of the existing assessment that have been created. While the student's view shows all the assessments that they need to take or have already taken.
+  - Images:
+
+    <p align="center">
+    <img src="https://github.com/UFGroup4b/Sapphire-Project03-4b/blob/develop/4b/READMEimgs/teacherAssessmentList.png?raw=true" width="50%">
+    </p>
+
+    > Figure 4: Display of the teacher view of the assessment list
+
+    <p align="center">
+    <img src="https://github.com/UFGroup4b/Sapphire-Project03-4b/blob/develop/4b/READMEimgs/studentAssessmentList.png?raw=true" width="50%">
+    </p>
+
+    > Figure 5: Display of the student view of the assessment list
+
+- Take Assessment Page
+
+  - Description: Allows students to take the assessment. However the submission button is not currently functionally because no database table to store student responses has been created yet.
+  - Images:
+
+    <p align="center">
+    <img src="https://github.com/UFGroup4b/Sapphire-Project03-4b/blob/develop/4b/READMEimgs/teacherAssessmentDisplay.png?raw=true" width="50%">
+    </p>
+
+    > Figure 6: Display of the assessment page.
+
+- Assessment Grading Page
+
+  - Description: Allows teachers to view and grade student submissions for each specific assessment. Currently, this page is not linked to the database because a table to store student assessment submissions has not been created yet.
+  - Images:
+
+    <p align="center">
+    <img src="https://github.com/UFGroup4b/Sapphire-Project03-4b/blob/develop/4b/READMEimgs/teacherAssessmentGrader.png?raw=true" width="50%">
+    </p>
+
+    > Figure 7: Display of the student assessment submissions page.
+
 ### Instructions for how to run the project locally
 
 1. Install [Node](https://nodejs.org/en/) and [Yarn](https://classic.yarnpkg.com/en/docs/install#windows-stable) and clone this repository
@@ -43,12 +97,14 @@ To update the database and server connections, you will need to connect to your 
 ### Outstanding work
 
 ### Built Upon
-  - Bootstrap
-  - Ant Design
+
+- Bootstrap
+- Ant Design
 
 ## Application
 
-### `client` 
+### `client`
+
 [client](/client#client) is the frontend of the application. It is powered by [React](https://reactjs.org/) and [Blockly](https://developers.google.com/blockly).
 
 ### `server`
@@ -57,7 +113,7 @@ To update the database and server connections, you will need to connect to your 
 
 ### `compile`
 
-  [compile](/compile#compile) is an arduino compiler service. It is an unofficial fork of [Chromeduino](https://github.com/spaceneedle/Chromeduino).
+[compile](/compile#compile) is an arduino compiler service. It is an unofficial fork of [Chromeduino](https://github.com/spaceneedle/Chromeduino).
 
 <br/>
 
@@ -66,21 +122,22 @@ To update the database and server connections, you will need to connect to your 
 > The project is divided into three conceptual environments.
 
 ### Development
+
 #### Structure
 
 The development environment is composed of five servers. The first one is run with the [Create React App](https://create-react-app.dev/docs/getting-started/) dev server. The later four are containerized with docker and run with [docker compose](https://docs.docker.com/compose/).
 
-* `casmm-client-dev` - localhost:3000
+- `casmm-client-dev` - localhost:3000
 
-* `casmm-server-dev` - localhost:1337/admin
+- `casmm-server-dev` - localhost:1337/admin
 
-* `casmm-compile-dev` 
+- `casmm-compile-dev`
 
-* `casmm-db-dev` - localhost:5432
+- `casmm-db-dev` - localhost:5432
 
   > The first time the db is started, the [init_db.sh](/scripts/init_db.sh) script will run and seed the database with an environment specific dump. Read about Postgres initialization scripts [here](https://github.com/docker-library/docs/blob/master/postgres/README.md#initialization-scripts). To see how to create this dump, look [here](https://github.com/DavidMagda/CaSMM_fork_2023/blob/develop/scripts/readme.md).
 
-* `casmm-compile_queue-dev`
+- `casmm-compile_queue-dev`
 
 #### Running
 
@@ -96,7 +153,6 @@ The development environment is composed of five servers. The first one is run wi
 2. Run `docker compose up` from `/`
 
    > Grant permission to the **scripts** and **server** directories if you are prompted
-   
 
 ### Staging
 
@@ -104,9 +160,9 @@ The development environment is composed of five servers. The first one is run wi
 
 The staging environment is a Heroku app. It is composed of a web dyno, compile dyno, Heroku Postgres add-on, and Heroku Redis add-on.
 
-* `casmm-staging` - [casmm-staging.herokuapp.com](https://casmm-staging.herokuapp.com/)
-  * The web dyno runs `server`
-  * The compile dyno runs `compile`
+- `casmm-staging` - [casmm-staging.herokuapp.com](https://casmm-staging.herokuapp.com/)
+  - The web dyno runs `server`
+  - The compile dyno runs `compile`
 
 #### Running
 
@@ -118,9 +174,9 @@ The staging environment is a Heroku app. It is composed of a web dyno, compile d
 
 The production environment is a Heroku app. It is composed of a web dyno, compile dyno, Heroku Postgres add-on, and Heroku Redis add-on.
 
-* `casmm` - [www.casmm.org](https://www.casmm.org/)
-  * The web dyno runs `server`
-  * The compile dyno runs `compile`
+- `casmm` - [www.casmm.org](https://www.casmm.org/)
+  - The web dyno runs `server`
+  - The compile dyno runs `compile`
 
 #### Running
 
@@ -130,7 +186,7 @@ The production environment is a Heroku app. It is composed of a web dyno, compil
 
 ## Maintenance
 
-All three components of the application have their own dependencies managed in their respective `package.json` files. Run `npm outdated` in each folder to see what packages have new releases. Before updating a package (especially new major versions), ensure that there are no breaking changes. Avoid updating all of the packages at once by running `npm update` because it could lead to breaking changes. 
+All three components of the application have their own dependencies managed in their respective `package.json` files. Run `npm outdated` in each folder to see what packages have new releases. Before updating a package (especially new major versions), ensure that there are no breaking changes. Avoid updating all of the packages at once by running `npm update` because it could lead to breaking changes.
 
 ### Strapi
 
@@ -146,9 +202,9 @@ All of the deployments and releases are handled automatically with [GitHub Actio
 
 ## Contributing
 
-### Git Flow 
+### Git Flow
 
-> We will follow this git flow for the most part — instead of individual release branches, we will have one to streamline staging deployment 
+> We will follow this git flow for the most part — instead of individual release branches, we will have one to streamline staging deployment
 
 ![Git Flow](https://nvie.com/img/git-model@2x.png)
 
