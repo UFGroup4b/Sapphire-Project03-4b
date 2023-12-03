@@ -140,3 +140,13 @@ Before submitting a pull request, rebase the feature branch into the target bran
 
 - PRs to **master** should squash and merge
 - PRs to all other branches should create a merge commit
+
+
+## Updates
+- List of all project features implemented and associated screenshots of features developed
+- Instructions for how to run the project locally 
+- How to update database and server connections
+- Update the database and STRAPI dump files in your file directory
+- Outstanding work
+- Built Upon
+  - Credit people/organizations you borrowed code from  or APIs you used - e.g., Bootstrap,  emails, authentication etc
