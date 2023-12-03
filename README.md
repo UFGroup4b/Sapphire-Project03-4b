@@ -8,6 +8,36 @@ Cloud-based programming interface
 ![Deploy Production](https://github.com/STEM-C/CaSMM/workflows/Deploy%20Production/badge.svg)
 
 <br/>
+## Updates
+### List of all project features implemented and associated screenshots of features developed
+  - Assessment Editor
+    - Description: Allows teachers and admin to edit existing assessments and specific problems in the assessment.
+    - Images:
+![Editor image](https://github.com/UFGroup4b/Sapphire-Project03-4b/blob/develop/4b/READMEimgs/AssessmentEditor.png)
+![Editor image 2](https://github.com/UFGroup4b/Sapphire-Project03-4b/blob/develop/4b/READMEimgs/AssessmentEditor2.png)
+![Question Editor](https://github.com/UFGroup4b/Sapphire-Project03-4b/blob/develop/4b/READMEimgs/QuestionEditor.png)
+  - Assessments List Page
+  - Take Assessment Page
+  - Assessment Grading Page
+### Instructions for how to run the project locally
+
+1. Install [Node](https://nodejs.org/en/) and [Yarn](https://classic.yarnpkg.com/en/docs/install#windows-stable) and clone this repository
+2. Run `yarn` to install project dependencies
+3. Run `yarn start` from `/client` to startup the client
+4. Install [docker](https://docs.docker.com/get-docker/)
+5. Run `docker compose up` from `/`
+
+   > Grant permission to the **scripts** and **server** directories if you are prompted
+
+### How to update database and server connections
+
+To update the database and server connections, you will need to connect to your docker and restart it after making the necessary changes to the database. Note that all changes that were made by Group 4b were consistent with the existing database, so there is no extra work to be done.
+
+### Outstanding work
+
+### Built Upon
+  - Bootstrap
+  - Ant Design
 
 ## Application
 
@@ -140,30 +170,3 @@ Before submitting a pull request, rebase the feature branch into the target bran
 
 - PRs to **master** should squash and merge
 - PRs to all other branches should create a merge commit
-
-
-## Updates
-### List of all project features implemented and associated screenshots of features developed
-  - Assessment Editor
-  - Assessments List Page
-  - Take Assessment Page
-  - Assessment Grading Page
-### Instructions for how to run the project locally
-
-1. Install [Node](https://nodejs.org/en/) and [Yarn](https://classic.yarnpkg.com/en/docs/install#windows-stable) and clone this repository
-2. Run `yarn` to install project dependencies
-3. Run `yarn start` from `/client` to startup the client
-4. Install [docker](https://docs.docker.com/get-docker/)
-5. Run `docker compose up` from `/`
-
-   > Grant permission to the **scripts** and **server** directories if you are prompted
-
-### How to update database and server connections
-
-To update the database and server connections, you will need to connect to your docker and restart it after making the necessary changes to the database. Note that all changes that were made by Group 4b were consistent with the existing database, so there is no extra work to be done.
-
-### Outstanding work
-
-### Built Upon
-  - Bootstrap
-  - Ant Design
