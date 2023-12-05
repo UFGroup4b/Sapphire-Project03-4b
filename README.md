@@ -92,7 +92,7 @@ Cloud-based programming interface
 
 ### How to update database and server connections
 
-To update the database and server connections, you will need to connect to your docker and restart it after making the necessary changes to the database. Note that all changes that were made by Group 4b were consistent with the existing database, so there is no extra work to be done.
+To update the database and server connections, you will need to connect to your docker and restart it after making the necessary changes to the database. You will need to set the access permissions for the assessments through the Strapi backend. Note that all changes that were made by Group 4b were consistent with the existing database, so there is no extra work to be done.
 
 ### Outstanding work
 
