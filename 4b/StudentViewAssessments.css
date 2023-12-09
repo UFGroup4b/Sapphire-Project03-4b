@@ -99,7 +99,7 @@ button:hover {
 .background {
     padding: 1px; /* hack to prevent margin collapse */
     background-size: cover;
-    background: #3d5c82;
+    background-color: #3D5C82;
 }
 .blackText {
     padding-top: 4.5rem;
