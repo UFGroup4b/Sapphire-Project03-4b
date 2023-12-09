@@ -69,7 +69,7 @@ Cloud-based programming interface
 
     > Figure 6: Display of the assessment page.
 
-- Assessment Grading Page
+- Assessment Grading Review Page
 
   - Description: Allows teachers to view and grade student submissions for each specific assessment. Currently, this page is not linked to the database because a table to store student assessment submissions has not been created yet.
   - Images:
@@ -96,9 +96,11 @@ To update the database and server connections, you will need to connect to your 
 
 ### Outstanding work
 
+- Build Student Database to store grades and responses
 - Form response integration
 - Grade integration for Teacher view
 - Media display
+- Grade Statistics Chart (for Assessment Grading Preview)
 
 ### Built Upon
 
