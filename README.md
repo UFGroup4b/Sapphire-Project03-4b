@@ -100,6 +100,11 @@ To update the database and server connections, you will need to connect to your 
 
 - Bootstrap
 - Ant Design
+- STRAPI
+- Vite
+- React.js
+- Blockly
+- Manifest.json
 
 ## Application
 
