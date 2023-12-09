@@ -96,6 +96,10 @@ To update the database and server connections, you will need to connect to your 
 
 ### Outstanding work
 
+- Form response integration
+- Grade integration for Teacher view
+- Media display
+
 ### Built Upon
 
 - Bootstrap
