@@ -102,7 +102,8 @@ To update the database and server connections, you will need to connect to your 
 - Media display
 - Grade Statistics Chart (for Assessment Grading Preview)
 - Grade box-and-whisker plot (for Assessment Page Preview)
-- Add a feature on the Assessment Editor to enable teachers to assign assessments to specific classrooms. 
+- Add a feature on the Assessment Editor to enable teachers to assign assessments to specific classrooms.
+- An issue with saving the permissions for access to Assessment table queries (by role) to Github. (For some reason, the permissions are not being saved, and must be manually assigned after pulling the code).
 
 ### Built Upon
 
