@@ -1,13 +1,10 @@
-
 import React, { useEffect, useState } from "react";
 import "./TeacherViewAssessments.css";
 import "../client/src/Utils/requests.js";
 import { useNavigate, useParams } from "react-router-dom";
 
-import NavBar from "../client/src/components/NavBar/NavBar";
-
-
 //components
+import NavBar from "../client/src/components/NavBar/NavBar";
 import AssignmentTitle from "./AssignmentTitle";
 import PreviewAssessment from "./PreviewAssessment";
 import DataVis from "./DataVisualization";
@@ -21,14 +18,14 @@ import Assessment from "../client/src/Utils/AssessmentObj";
 import message from "../client/src/components/Message";
 
 function SpecificAssessmentPreview() {
-  const [assessData, setAssessData] = React.useState(new Assessment());
+  const [assessData, setAssessData] = React.useState(new Assessment()); //make assessment data holder using Assessment object
   const [questions, setQuestions] = React.useState({});
-  const { id } = useParams();
+  const { id } = useParams(); //take ID of assessment being previewed from URL parameter
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await getAssessment(id);
+        const res = await getAssessment(id); //attempt to fetch assessment data associated with ID
         return res.data;
       } catch {
         return { err: "Data fetch failed" };
@@ -37,7 +34,7 @@ function SpecificAssessmentPreview() {
     fetchData().then((res) => {
       if (res) {
         console.log(res);
-        setAssessData(res);
+        setAssessData(res); //set data to "res" obtained from database
       } else {
         message.error(res.err);
         const navigate = useNavigate();
@@ -48,7 +45,7 @@ function SpecificAssessmentPreview() {
 
   let arr = [];
   for (let i = 0; i < assessData.questions.length; i++) {
-    arr.push(<Question question={assessData.questions[i]}></Question>);
+    arr.push(<Question question={assessData.questions[i]}></Question>); //add each question in the assessment to an array
   }
 
   return (
@@ -69,7 +66,7 @@ function SpecificAssessmentPreview() {
         <ButtonSet id={id} />
       </div>
       <p2 className="tableMid alignLeft bold">
-        Attempts: {assessData.attempts}, Points: {assessData.points}
+        Attempts: {assessData.attempts}, Points: {assessData.points} 
       </p2>
       {arr}
       <div>
@@ -80,13 +77,13 @@ function SpecificAssessmentPreview() {
 }
 
 function QuestionType({ question }) {
-  if (question.type === "multipleChoice" || question.type === "multiSelect") {
+  if (question.type === "multipleChoice" || question.type === "multiSelect") { //if a question type with provided choices
     let arr = [];
-    for (let i = 0; i < question.choices.length; i++) {
+    for (let i = 0; i < question.choices.length; i++) { //add each question choice to an array for rendering
       arr.push(
         <p2 className="tableMid alignLeft bold" key={i}>
           {" "}
-          {question.choices[i]}
+          {question.choices[i]} 
         </p2>
       );
     }
