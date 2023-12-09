@@ -101,6 +101,7 @@ To update the database and server connections, you will need to connect to your 
 - Grade integration for Teacher view
 - Media display
 - Grade Statistics Chart (for Assessment Grading Preview)
+- Add a feature on the Assessment Editor to enable teachers to assign assessments to specific classrooms. 
 
 ### Built Upon
 
