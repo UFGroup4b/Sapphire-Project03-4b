@@ -11,8 +11,18 @@ Cloud-based programming interface
 
 ## Updates
 
-### List of all project features implemented and associated screenshots of features developed
+### Link to Documentation
+- https://docs.google.com/document/d/1HrCT2Zm14kpZ3OKQii97H3OMucJ2gtVi/edit
 
+## Developers with delegated tasks (also available on Project Task Board):
+- Hongjie Shi - Hongjie (Product Manager): Created a question form that allows teacher to add, edit, or delete multiple choice questions to assessments and allows the teacher to either have an image or text for the questions or choices.
+- Jason Li - Insidiou5 (Scrum Master): Developed the majority of the backend work - created internal objects to store data for assessment and question objects, established database and CaSMM integration, provided rest of team with backend support. 
+- Ryan Coveny - Nqnt41 (Dev Team): Developed frontend css styling, the created Teacher View Assessment Page and the Student View Assessment Page.
+- Samuel Battis - sambattis (Dev Team): Developed the Preview Assessment Page.
+- Justin Beauchesne - JustinBeauchesne (Dev Team): Developed the Assessment Grading Review Page.
+- Austin Rhee - Wastfulajr (Dev Team): Developed the Take Assessment Page.
+
+### List of all project features implemented and associated screenshots of features developed
 - Assessment Editor
 
   - Description: Allows teachers and admin to edit existing assessments and specific problems in the assessment.
