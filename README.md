@@ -11,9 +11,6 @@ Cloud-based programming interface
 
 ## Updates
 
-### Link to Documentation
-- https://docs.google.com/document/d/1HrCT2Zm14kpZ3OKQii97H3OMucJ2gtVi/edit
-
 ## Developers with delegated tasks (also available on Project Task Board):
 - Hongjie Shi - Hongjie (Product Manager): Created a question form that allows teacher to add, edit, or delete multiple choice questions to assessments and allows the teacher to either have an image or text for the questions or choices.
 - Jason Li - Insidiou5 (Scrum Master): Developed the majority of the backend work - created internal objects to store data for assessment and question objects, established database and CaSMM integration, provided rest of team with backend support. 
